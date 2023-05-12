@@ -21,7 +21,7 @@ def find_result_files(base_path):
     results = []
     for path, directories, files in os.walk(base_path):
         for file in files:
-            if not path.endswith('new') or not file == 'estimates.json':
+            if not path.endswith('new') or file != 'estimates.json':
                 continue
             results += [os.path.join(path, file)]
     return results
